@@ -1,0 +1,2 @@
+# beyalog
+Beautiful YAML Logger
