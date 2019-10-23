@@ -158,28 +158,28 @@ function c_info(message, extra) {
     const t = new Date();
     console.info('\x1b[32m{"timestamp":' + t.getTime() +
         ',"level":"info","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m\n');
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m');
 }
 
 function c_warn(message, extra) {
     const t = new Date();
     console.warn('\x1b[33m{"timestamp":' + t.getTime() +
         ',"level":"warn","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m\n');
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m');
 }
 
 function c_error(message, extra) {
     const t = new Date();
     console.error('\x1b[31m{"timestamp":' + t.getTime() +
         ',"level":"error","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m\n');
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m');
 }
 
 function c_debug(message, extra) {
     const t = new Date();
     console.debug('\x1b[36m{"timestamp":' + t.getTime() +
         ',"level":"debug","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m\n');
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m');
 }
 
 //
@@ -188,28 +188,28 @@ function _info(message, extra) {
     const t = new Date();
     console.info('{"timestamp":' + t.getTime() +
         ',"level":"info","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\n');
+        '",' + JSON.stringify({ message, extra }).substr(1));
 }
 
 function _warn(message, extra) {
     const t = new Date();
     console.warn('{"timestamp":' + t.getTime() +
         ',"level":"warn","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\n');
+        '",' + JSON.stringify({ message, extra }).substr(1));
 }
 
 function _error(message, extra) {
     const t = new Date();
     console.error('{"timestamp":' + t.getTime() +
         ',"level":"error","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\n');
+        '",' + JSON.stringify({ message, extra }).substr(1));
 }
 
 function _debug(message, extra) {
     const t = new Date();
     console.debug('{"timestamp":' + t.getTime() +
         ',"level":"debug","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\n');
+        '",' + JSON.stringify({ message, extra }).substr(1));
 }
 
 //
