@@ -1,0 +1,29 @@
+{
+  "name": "beyalog",
+  "version": "1.0.0",
+  "description": "Beautiful YAML Logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpdiv-code/beyalog.git"
+  },
+  "keywords": [
+    "yaml",
+    "log",
+    "logger",
+    "pretty",
+    "beautiful"
+  ],
+  "author": "jpdiv.code",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpdiv-code/beyalog/issues"
+  },
+  "homepage": "https://github.com/jpdiv-code/beyalog#readme",
+  "dependencies": {
+    "yaml": "^1.7.1"
+  }
+}
