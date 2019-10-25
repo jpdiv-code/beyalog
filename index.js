@@ -9,72 +9,72 @@ function doNothing() { }
 function bc_info(message, extra) {
     if (extra) {
         const t = new Date();
-        console.info('\x1b[32m' + yaml.stringify({
+        process.stdout.write('\x1b[32m' + yaml.stringify({
             timestamp: t.getTime(),
             level: 'info',
             time: `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}`,
             message,
             extra,
-        }) + '\x1b[0m');
+        }) + '\x1b[0m\n');
     } else {
         const t = new Date();
-        console.info('\x1b[32mtimestamp: ' + t.getTime() + 
+        process.stdout.write('\x1b[32mtimestamp: ' + t.getTime() + 
             '\nlevel: info\ntime: ' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` + 
-            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\x1b[0m');
+            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\x1b[0m\n');
     }
 }
 
 function bc_warn(message, extra) {
     if (extra) {
         const t = new Date();
-        console.warn('\x1b[33m' + yaml.stringify({
+        process.stdout.write('\x1b[33m' + yaml.stringify({
             timestamp: t.getTime(),
             level: 'warn',
             time: `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}`,
             message,
             extra,
-        }) + '\x1b[0m');
+        }) + '\x1b[0m\n');
     } else {
         const t = new Date();
-        console.warn('\x1b[33mtimestamp: ' + t.getTime() + 
+        process.stdout.write('\x1b[33mtimestamp: ' + t.getTime() + 
             '\nlevel: warn\ntime: ' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` + 
-            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\x1b[0m');
+            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\x1b[0m\n');
     }
 }
 
 function bc_error(message, extra) {
     if (extra) {
         const t = new Date();
-        console.error('\x1b[31m' + yaml.stringify({
+        process.stderr.write('\x1b[31m' + yaml.stringify({
             timestamp: t.getTime(),
             level: 'error',
             time: `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}`,
             message,
             extra,
-        }) + '\x1b[0m');
+        }) + '\x1b[0m\n');
     } else {
         const t = new Date();
-        console.error('\x1b[31mtimestamp: ' + t.getTime() + 
+        process.stderr.write('\x1b[31mtimestamp: ' + t.getTime() + 
             '\nlevel: error\ntime: ' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` + 
-            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\x1b[0m');
+            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\x1b[0m\n');
     }
 }
 
 function bc_debug(message, extra) {
     if (extra) {
         const t = new Date();
-        console.debug('\x1b[36m' + yaml.stringify({
+        process.stdout.write('\x1b[36m' + yaml.stringify({
             timestamp: t.getTime(),
             level: 'debug',
             time: `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}`,
             message,
             extra,
-        }) + '\x1b[0m');
+        }) + '\x1b[0m\n');
     } else {
         const t = new Date();
-        console.debug('\x1b[36mtimestamp: ' + t.getTime() + 
+        process.stdout.write('\x1b[36mtimestamp: ' + t.getTime() + 
             '\nlevel: debug\ntime: ' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` + 
-            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\x1b[0m');
+            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\x1b[0m\n');
     }
 }
 
@@ -83,72 +83,72 @@ function bc_debug(message, extra) {
 function b_info(message, extra) {
     if (extra) {
         const t = new Date();
-        console.info(yaml.stringify({
+        process.stdout.write(yaml.stringify({
             timestamp: t.getTime(),
             level: 'info',
             time: `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}`,
             message,
             extra,
-        }));
+        }) + '\n');
     } else {
         const t = new Date();
-        console.info('timestamp: ' + t.getTime() + 
+        process.stdout.write('timestamp: ' + t.getTime() + 
             '\nlevel: info\ntime: ' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` + 
-            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n');
+            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\n');
     }
 }
 
 function b_warn(message, extra) {
     if (extra) {
         const t = new Date();
-        console.warn(yaml.stringify({
+        process.stdout.write(yaml.stringify({
             timestamp: t.getTime(),
             level: 'warn',
             time: `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}`,
             message,
             extra,
-        }));
+        }) + '\n');
     } else {
         const t = new Date();
-        console.warn('timestamp: ' + t.getTime() + 
+        process.stdout.write('timestamp: ' + t.getTime() + 
             '\nlevel: warn\ntime: ' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` + 
-            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n');
+            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\n');
     }
 }
 
 function b_error(message, extra) {
     if (extra) {
         const t = new Date();
-        console.error(yaml.stringify({
+        process.stderr.write(yaml.stringify({
             timestamp: t.getTime(),
             level: 'error',
             time: `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}`,
             message,
             extra,
-        }));
+        }) + '\n');
     } else {
         const t = new Date();
-        console.error('timestamp: ' + t.getTime() + 
+        process.stderr.write('timestamp: ' + t.getTime() + 
             '\nlevel: error\ntime: ' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` + 
-            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n');
+            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\n');
     }
 }
 
 function b_debug(message, extra) {
     if (extra) {
         const t = new Date();
-        console.debug(yaml.stringify({
+        process.stdout.write(yaml.stringify({
             timestamp: t.getTime(),
             level: 'debug',
             time: `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}`,
             message,
             extra,
-        }));
+        }) + '\n');
     } else {
         const t = new Date();
-        console.debug('timestamp: ' + t.getTime() + 
+        process.stdout.write('timestamp: ' + t.getTime() + 
             '\nlevel: debug\ntime: ' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` + 
-            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n');
+            '\nmessage: ' + (message.includes('\n') ? ('|-\n  ' + message.replace('\n', '\n  ')) : message) + '\n\n');
     }
 }
 
@@ -156,60 +156,60 @@ function b_debug(message, extra) {
 
 function c_info(message, extra) {
     const t = new Date();
-    console.info('\x1b[32m{"timestamp":' + t.getTime() +
+    process.stdout.write('\x1b[32m{"timestamp":' + t.getTime() +
         ',"level":"info","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m');
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m\n');
 }
 
 function c_warn(message, extra) {
     const t = new Date();
-    console.warn('\x1b[33m{"timestamp":' + t.getTime() +
+    process.stdout.write('\x1b[33m{"timestamp":' + t.getTime() +
         ',"level":"warn","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m');
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m\n');
 }
 
 function c_error(message, extra) {
     const t = new Date();
-    console.error('\x1b[31m{"timestamp":' + t.getTime() +
+    process.stderr.write('\x1b[31m{"timestamp":' + t.getTime() +
         ',"level":"error","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m');
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m\n');
 }
 
 function c_debug(message, extra) {
     const t = new Date();
-    console.debug('\x1b[36m{"timestamp":' + t.getTime() +
+    process.stdout.write('\x1b[36m{"timestamp":' + t.getTime() +
         ',"level":"debug","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m');
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\x1b[0m\n');
 }
 
 //
 
 function _info(message, extra) {
     const t = new Date();
-    console.info('{"timestamp":' + t.getTime() +
+    process.stdout.write('{"timestamp":' + t.getTime() +
         ',"level":"info","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1));
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\n');
 }
 
 function _warn(message, extra) {
     const t = new Date();
-    console.warn('{"timestamp":' + t.getTime() +
+    process.stdout.write('{"timestamp":' + t.getTime() +
         ',"level":"warn","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1));
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\n');
 }
 
 function _error(message, extra) {
     const t = new Date();
-    console.error('{"timestamp":' + t.getTime() +
+    process.stderr.write('{"timestamp":' + t.getTime() +
         ',"level":"error","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1));
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\n');
 }
 
 function _debug(message, extra) {
     const t = new Date();
-    console.debug('{"timestamp":' + t.getTime() +
+    process.stdout.write('{"timestamp":' + t.getTime() +
         ',"level":"debug","time":"' + `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}:${t.getMilliseconds()}` +
-        '",' + JSON.stringify({ message, extra }).substr(1));
+        '",' + JSON.stringify({ message, extra }).substr(1) + '\n');
 }
 
 //
